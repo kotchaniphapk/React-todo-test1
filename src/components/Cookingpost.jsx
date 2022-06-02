@@ -1,3 +1,5 @@
+import "./Cookingpost.css";
+
 function Cookingpost() {
     return (
         <div className="cooking-post">
@@ -11,3 +13,4 @@ function Cookingpost() {
 
     )
 }
+export default Cookingpost;

@@ -22,20 +22,20 @@ const cookings = [
     {
         title: "Tokbokee",
         tumbnailurl:"/images/04.jpeg",
-    }  
-]
+    } 
+];
+
 function App() {
 
         const cookingElements = cookings.map((cooking,index)=> {
-        return <Item key={index} cooking={cooking} /> ;
-    
+       
+            return <Item key={index} cooking={cooking} />;
         });
-
     return (
        <div className="app">
            <AppHeader />
            <div className="app-grid">
-            <cookingElements />
+            {cookingElements}
           </div>
             
         </div>

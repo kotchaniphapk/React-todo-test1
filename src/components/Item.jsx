@@ -1,7 +1,7 @@
 import "./Item.css";
 
 function Item (props) {
-    const {cooking} =  props;
+    const {cooking}  =  props;
 
     return (
         <div className="cooking-item">

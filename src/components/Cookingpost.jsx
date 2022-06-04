@@ -1,6 +1,7 @@
 import "./Cookingpost.css";
 
-function Cookingpost() {
+function Cookingpost(props) {
+    const {cooking} = props;
     return (
         <div className="cooking-post">
             <div className="cooking-post-bg" />

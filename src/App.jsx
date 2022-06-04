@@ -1,43 +1,36 @@
 
+import { useState } from "react";
 import "../dist/output.css";
 import "./App.css";
 import AppHeader from "./components/AppHeader";
 import Cookingpost from "./components/Cookingpost";
 import Item from "./components/Item";
-
-const cookings = [
-
-    {
-        title: "Noodle",
-        tumbnailurl:"/images/01.jpeg",
-    },
-    {
-        title: "Hotdog",
-        tumbnailurl:"/images/02.jpeg",
-    },
-    {
-        title: "French Fries",
-        tumbnailurl:"/images/03.jpeg",
-    },
-    {
-        title: "Tokbokee",
-        tumbnailurl:"/images/04.jpeg",
-    } 
-];
+import cookings from "./data/cookings";
 
 function App() {
+        
+        const [selectedcooking,setSelectedcooking]= useState(cookings[null]);
+        function onCookingopenclick () {
+            setSelectedcooking(cookings[0])
+        }
 
         const cookingElements = cookings.map((cooking,index)=> {
-       
-            return <Item key={index} cooking={cooking} />;
-        });
+          return <Item key={index} cooking={cooking} />;
+        });    
+      
+       let cookingpost= null;
+        if (!!selectedcooking) {
+            cookingpost= <Cookingpost cooking={selectedcooking } />
+        }
+
     return (
        <div className="app">
            <AppHeader />
+            <button onClick={onCookingopenclick} >Select your food !</button>
            <div className="app-grid">
             {cookingElements}
           </div>
-            
+          {cookingpost}
         </div>
              
 
